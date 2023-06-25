@@ -44,7 +44,9 @@ const Form = () => {
   return (
     <section className="py-[100px] w-full">
       <div className="container flex justify-center items-center text-center flex-col gap-9">
-        <h1 className="text-5xl uppercase">Welcome to Shhhh Beta</h1>
+        <h1 className="text-5xl uppercase hero-header">
+          Welcome to Shhhh Beta
+        </h1>
 
         {isCorrect ? (
           <h1>

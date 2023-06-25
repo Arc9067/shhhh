@@ -9,8 +9,14 @@ const App = () => {
   const main = useRef();
 
   useLayoutEffect(() => {
-    // const ctx = gsap.context((self) => {
-    //   console.log(self);
+    const ctx = gsap.context((self) => {
+      //   console.log(self);
+      gsap.timeline().from(".clickBtn", {
+        opacity: 0,
+        scale: 1.5,
+        ease: "back",
+      });
+    }, main);
     gsap
       .timeline()
       .to(".loading-img", {
@@ -28,8 +34,8 @@ const App = () => {
         display: "none",
         ease: "back",
       });
-    // }, main);
-    // return () => ctx.revert();
+
+    return () => ctx.revert();
   }, [userClicked]);
 
   function Loading() {
@@ -56,7 +62,7 @@ const App = () => {
           viewBox="0 0 84 102"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-0 left-2"
+          className="absolute top-0 left-2 animate-bounce"
         >
           <g clip-path="url(#clip0_314_103)">
             <path d="M0 79.13L56.71 0L54.72 101.16L0 79.13Z" fill="white" />
@@ -78,7 +84,7 @@ const App = () => {
           viewBox="0 0 79 86"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute right-0 bottom-0"
+          className="absolute right-0 bottom-0 animate-bounce"
         >
           <g clip-path="url(#clip0_314_110)">
             <path
@@ -107,7 +113,7 @@ const App = () => {
           viewBox="0 0 103 96"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0"
+          className="absolute bottom-0 animate-bounce duration-200"
         >
           <g clip-path="url(#clip0_314_106)">
             <path
@@ -132,7 +138,7 @@ const App = () => {
         </svg>
         <div className="container flex justify-center items-center">
           <button
-            className="w-[303px] h-[60px] px-8 py-4 bg-white rounded shadow justify-center items-center gap-2.5 inline-fle cursor-pointer"
+            className="w-[303px] clickBtn h-[60px] px-8 py-4 bg-white rounded shadow justify-center items-center gap-2.5 inline-fle cursor-pointer"
             onClick={() => {
               setUserClicked(true);
             }}
