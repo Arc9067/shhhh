@@ -41,7 +41,7 @@ const Form = () => {
   return (
     <section className="py-[100px] w-full">
       <div className="container flex justify-center items-center text-center flex-col gap-9">
-        <h1 className="text-6xl ">Welcome to Shhhh Beta</h1>
+        <h1 className="text-6xl">Welcome to Shhhh Beta</h1>
 
         {isCorrect ? (
           <h1>
@@ -78,7 +78,7 @@ const Form = () => {
                 value={formik.values.userName}
                 required
                 placeholder="https://t.me/eth"
-                className="bg-black font-serif border-white border rounded-md px-5 py-3 focus:border-white"
+                className="bg-black font-serif border-white border rounded-md px-5 py-3 focus:border-white placeholder:!font-serif"
               />
             </div>
 

@@ -17,7 +17,8 @@ export default {
         black: "#101010",
       },
       fontFamily: {
-        NORWALK: ["NORWALK", "sans-serif"],
+        primary: ["Monomaniac One", "sans-serif"],
+        serif: ["mongolian-baiti-regular", " sans-serif"],
       },
     },
   },

@@ -37,7 +37,7 @@ const App = () => {
     );
   }
   return (
-    <section className="min-h-screen w-full bg-black text-white font-NORWALK ">
+    <section className="min-h-screen w-full bg-black text-white font-primary ">
       <Loading />
       <Form />
     </section>
