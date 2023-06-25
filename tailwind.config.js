@@ -13,11 +13,10 @@ export default {
       },
     },
     extend: {
-      colors: {
-      },
+      colors: {},
       fontFamily: {
-        primary: ["Monomaniac One", "sans-serif"],
-        serif: ["mongolian-baiti-regular", " sans-serif"],
+        primary: ["Attack Of Monster", "sans-serif"],
+        serif: ["b Belimbing", " sans-serif"],
       },
     },
   },
