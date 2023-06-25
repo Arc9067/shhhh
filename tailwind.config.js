@@ -15,7 +15,7 @@ export default {
     extend: {
       colors: {},
       fontFamily: {
-        primary: ["Attack Of Monster", "sans-serif"],
+        primary: ["NoScary", "sans-serif"],
         serif: ["b Belimbing", " sans-serif"],
       },
     },
