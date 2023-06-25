@@ -15,6 +15,7 @@ const App = () => {
         opacity: 0,
         scale: 1.5,
         ease: "back",
+        duration: 4,
       });
     }, main);
     gsap
