@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Field, ErrorMessage, useFormik } from "formik";
-import { ImTelegram } from "react-icons/im";
+import { ImTelegram, ImMail } from "react-icons/im";
 import { AiFillTwitterSquare } from "react-icons/ai";
 import axios from "axios";
 
@@ -52,7 +52,7 @@ const Form = () => {
         ) : (
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-9">
             <div className="flex flex-col gap-4">
-              <label htmlFor="email" className="text-3xl">
+              <label htmlFor="email" className="text-2xl">
                 Email Address
               </label>
               <input
@@ -63,11 +63,11 @@ const Form = () => {
                 value={formik.values.email}
                 required
                 placeholder="sample@gmail.com"
-                className="bg-black border-white font-serif border rounded-md px-5 py-3 focus:border-white"
+                className="bg-neutral-900 rounded border border-white border-opacity-50 font-serif  px-5 py-3 focus:border-white"
               />
             </div>
             <div className="flex flex-col gap-4">
-              <label htmlFor="userName" className="text-3xl">
+              <label htmlFor="userName" className="text-2xl">
                 Telegram Username
               </label>
               <input
@@ -78,13 +78,13 @@ const Form = () => {
                 value={formik.values.userName}
                 required
                 placeholder="https://t.me/eth"
-                className="bg-black font-serif border-white border rounded-md px-5 py-3 focus:border-white placeholder:!font-serif"
+                className="bg-neutral-900 rounded border border-white border-opacity-50 font-serif  px-5 py-3 focus:border-white"
               />
             </div>
 
             <button
               type="submit"
-              className="px-9 py-4 font-serif bg-white text-black rounded-lg"
+              className="px-9 py-4 font-serif text-white bg-indigo-500 rounded-lg"
               onClick={setCorrect}
             >
               Submit
@@ -98,6 +98,9 @@ const Form = () => {
           </a>
           <a href="" className="text-3xl">
             <AiFillTwitterSquare />
+          </a>
+          <a href="" className="text-3xl">
+            <ImMail />
           </a>
         </div>
       </div>

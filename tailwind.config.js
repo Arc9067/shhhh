@@ -14,7 +14,6 @@ export default {
     },
     extend: {
       colors: {
-        black: "#101010",
       },
       fontFamily: {
         primary: ["Monomaniac One", "sans-serif"],
