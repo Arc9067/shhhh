@@ -12,13 +12,16 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
+    "email-validator": "^2.0.4",
     "formik": "^2.4.2",
     "gsap": "^3.12.1",
+    "is-valid-email": "^0.0.5",
     "postcss": "^8.4.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "validator": "^13.9.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

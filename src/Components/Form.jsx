@@ -3,9 +3,11 @@ import { Formik, Field, ErrorMessage, useFormik } from "formik";
 import { ImTelegram, ImMail } from "react-icons/im";
 import { AiFillTwitterSquare } from "react-icons/ai";
 import axios from "axios";
+import validator from "validator";
 
 const Form = () => {
   const [isCorrect, setIsCorrect] = useState(false);
+  const [error, SetError] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -29,12 +31,13 @@ const Form = () => {
         console.error("Error sending email:", error);
       }
     };
+  }
 
-    if (formik.values.email && formik.values.userName) {
-      setIsCorrect(true);
-      sendEmail();
+  function handleBlur() {
+    if (validator.isEmail(formik.values.email)) {
+      SetError(false);
     } else {
-      setCorrect(false);
+      SetError(true);
     }
   }
 
@@ -63,8 +66,14 @@ const Form = () => {
                 value={formik.values.email}
                 required
                 placeholder="sample@gmail.com"
-                className="bg-neutral-900 rounded border border-white border-opacity-50 font-serif  px-5 py-3 focus:border-white focus:outline-none"
+                className="bg-neutral-900 rounded border border-white border-opacity-50 font-serif  px-5 py-3  focus:outline-none placeholder:text-white"
+                onBlur={handleBlur}
               />
+              {error && (
+                <p className="text-center font-serif capitalize text-red-600 text-[16px] font-normal tracking-wide">
+                  invalid email
+                </p>
+              )}
             </div>
             <div className="flex flex-col gap-4">
               <label htmlFor="userName" className="text-xl">
@@ -78,7 +87,7 @@ const Form = () => {
                 value={formik.values.userName}
                 required
                 placeholder="https://t.me/eth"
-                className="bg-neutral-900 rounded border border-white border-opacity-50 !font-serif  px-5 py-3 focus:border-white focus:outline-none"
+                className="bg-neutral-900 rounded border border-white border-opacity-50 !font-serif  px-5 py-3  focus:outline-none placeholder:text-white"
               />
             </div>
 
