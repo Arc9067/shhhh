@@ -30,7 +30,7 @@ const App = () => {
       });
     // }, main);
     // return () => ctx.revert();
-  }, []);
+  }, [userClicked]);
 
   function Loading() {
     return (
@@ -231,7 +231,8 @@ const App = () => {
         </defs>
       </svg>
 
-      {!userClicked ? <Click /> : <Form />}
+      {!userClicked ? <Click /> : <Loading />}
+      <Form />
     </section>
   );
 };
