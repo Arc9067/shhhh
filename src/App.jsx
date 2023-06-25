@@ -55,7 +55,7 @@ const App = () => {
     return (
       <div
         ref={main}
-        className=" min-h-screen click w-full bg-neutral-950 z-40 top-0 left-0 flex justify-center items-center relative"
+        className=" min-h-screen click w-full bg-neutral-950 z-40 top-0 left-0 fixed flex justify-center items-center"
       >
         <svg
           width="84"

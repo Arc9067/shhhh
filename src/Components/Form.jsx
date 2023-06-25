@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Formik, Field, ErrorMessage, useFormik } from "formik";
+import {useFormik } from "formik";
 import { ImTelegram, ImMail } from "react-icons/im";
 import { AiFillTwitterSquare } from "react-icons/ai";
 import axios from "axios";
@@ -17,20 +17,29 @@ const Form = () => {
     },
   });
 
-  function setCorrect() {
-    const sendEmail = async () => {
-      try {
-        const response = await axios.post("http://3001/send-email", {
-          to: formik.values.email,
-          subject: "Test Email",
-          message: "This is a test email",
-        });
-        console.log(response.data); // Email sent successfully
-      } catch (error) {
-        console.error("Error sending email:", error);
-      }
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    const options = {
+      method: "POST",
+      url: "https://flows-api.vercel.app/api/sendmail",
+      headers: { "Content-Type": "application/json" },
+      data: {
+        email: "team@grugtoken.com",
+        name: "Folarin",
+        message: "Hello, this is the another test message from the resend",
+        recipient: "atandarokib@gmail.com",
+      },
     };
-  }
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
 
   function handleBlur() {
     if (validator.isEmail(formik.values.email)) {
@@ -54,7 +63,7 @@ const Form = () => {
             us on tg and twitter.
           </h1>
         ) : (
-          <form onSubmit={formik.handleSubmit} className="flex flex-col gap-9">
+          <form onSubmit={sendEmail} className="flex flex-col gap-9">
             <div className="flex flex-col gap-4">
               <label htmlFor="email" className="text-xl">
                 Email Address
@@ -80,7 +89,6 @@ const Form = () => {
             <button
               type="submit"
               className="px-9 py-4 font-primary text-black bg-white rounded-lg"
-              onClick={setCorrect}
             >
               Submit
             </button>
