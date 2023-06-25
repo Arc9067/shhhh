@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import loadingImg from "./assets/loading.png";
 import { gsap } from "gsap";
 import Form from "./Components/Form";
@@ -6,8 +6,12 @@ import Form from "./Components/Form";
 const App = () => {
   const [loading, setLoading] = useState("true");
   const [userClicked, setUserClicked] = useState(false);
-  useEffect(() => {
-    const loadingTimeLine = gsap
+  const main = useRef();
+
+  useLayoutEffect(() => {
+    // const ctx = gsap.context((self) => {
+    //   console.log(self);
+    gsap
       .timeline()
       .to(".loading-img", {
         scale: 2,
@@ -24,6 +28,8 @@ const App = () => {
         display: "none",
         ease: "back",
       });
+    // }, main);
+    // return () => ctx.revert();
   }, []);
 
   function Loading() {
@@ -40,7 +46,10 @@ const App = () => {
 
   function Click() {
     return (
-      <div className=" min-h-screen click w-full bg-neutral-950 z-40 top-0 left-0 flex justify-center items-center relative">
+      <div
+        ref={main}
+        className=" min-h-screen click w-full bg-neutral-950 z-40 top-0 left-0 flex justify-center items-center relative"
+      >
         <svg
           width="84"
           height="102"
@@ -122,9 +131,11 @@ const App = () => {
           </defs>
         </svg>
         <div className="container flex justify-center items-center">
-          <div
-            className="w-[303px] h-[60px] px-8 py-4 bg-white rounded shadow justify-center items-center gap-2.5 inline-flex"
-            onClick={setUserClicked(true)}
+          <button
+            className="w-[303px] h-[60px] px-8 py-4 bg-white rounded shadow justify-center items-center gap-2.5 inline-fle cursor-pointer"
+            onClick={() => {
+              setUserClicked(true);
+            }}
           >
             <div className="justify-center items-center gap-2.5 flex">
               <div className="text-black text-[20px] font-normal leading-7">
@@ -132,7 +143,7 @@ const App = () => {
               </div>
               <div className="w-6 h-6 relative" />
             </div>
-          </div>
+          </button>
         </div>
       </div>
     );
@@ -220,7 +231,6 @@ const App = () => {
         </defs>
       </svg>
 
-      <Loading />
       {!userClicked ? <Click /> : <Form />}
     </section>
   );
