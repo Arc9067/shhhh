@@ -139,13 +139,13 @@ const App = () => {
         </svg>
         <div className="container flex justify-center items-center">
           <button
-            className="w-[303px] clickBtn h-[60px] px-8 py-4 bg-white rounded shadow justify-center items-center gap-2.5 inline-fle cursor-pointer"
+            className="w-[303px] clickBtn h-[60px] px-8 py-4 bg-transparent rounded shadow justify-center items-center gap-2.5 inline-fle cursor-pointer"
             onClick={() => {
               setUserClicked(true);
             }}
           >
             <div className="justify-center items-center gap-2.5 flex">
-              <div className="text-black text-[20px] font-normal leading-7">
+              <div className="text-white text-[20px] font-normal leading-7">
                 CLick to Enter
               </div>
               <div className="w-6 h-6 relative" />
