@@ -52,7 +52,7 @@ const Form = () => {
         ) : (
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-9">
             <div className="flex flex-col gap-4">
-              <label htmlFor="email" className="text-2xl">
+              <label htmlFor="email" className="text-xl">
                 Email Address
               </label>
               <input
@@ -67,7 +67,7 @@ const Form = () => {
               />
             </div>
             <div className="flex flex-col gap-4">
-              <label htmlFor="userName" className="text-2xl">
+              <label htmlFor="userName" className="text-xl">
                 Telegram Username
               </label>
               <input
