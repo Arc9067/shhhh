@@ -11,7 +11,6 @@ const Form = () => {
   const formik = useFormik({
     initialValues: {
       email: "",
-      userName: "",
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -76,21 +75,6 @@ const Form = () => {
                   invalid email
                 </p>
               )}
-            </div>
-            <div className="flex flex-col gap-4">
-              <label htmlFor="userName" className="text-xl">
-                Telegram Username
-              </label>
-              <input
-                id="userName"
-                name="userName"
-                type="url"
-                onChange={formik.handleChange}
-                value={formik.values.userName}
-                required
-                placeholder="https://t.me/eth"
-                className="bg-neutral-900 rounded border border-white border-opacity-50 !font-serif  px-5 py-3  focus:outline-none placeholder:text-white"
-              />
             </div>
 
             <button
