@@ -38,7 +38,8 @@ const Form = () => {
       })
       .catch(function (error) {
         console.error(error);
-        SetError("invalid email");
+        setIsCorrect(false);
+        SetError(true);
       });
   };
 
