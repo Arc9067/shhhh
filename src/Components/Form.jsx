@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useFormik } from "formik";
+import { useFormik } from "formik";
 import { ImTelegram, ImMail } from "react-icons/im";
 import { AiFillTwitterSquare } from "react-icons/ai";
 import axios from "axios";
@@ -21,7 +21,7 @@ const Form = () => {
     e.preventDefault();
     const options = {
       method: "POST",
-      url: "https://flows-api.vercel.app/api/sendmail",
+      url: "https://fine-lime-chick-hose.cyclic.app/api/sendmail",
       headers: { "Content-Type": "application/json" },
       data: {
         email: "team@grugtoken.com",
