@@ -58,15 +58,16 @@ We will send you notifying mail.
   return (
     <section className="py-[100px] w-full">
       <div className="container flex justify-center items-center text-center flex-col gap-9">
-        <h1 className="text-5xl uppercase hero-header">
-          Welcome to Shhhh Beta
-        </h1>
+        <h1 className="text-5xl uppercase hero-header">Welcome to Shhhh Ai</h1>
 
         {isCorrect ? (
           <h1 className="text-3xl max-w-[800px] mx-auto text-center">
-            That Thanks For option in ! Once the Token is live , and beta
-            version is up We will send you a notifying mail. For other info join
-            us on tg and twitter.
+            Thanks for opting in ! Once the token is live and beta version is up{" "}
+            <br />
+            We will send you notifying mail.
+            <br />
+            <br />
+            <span>For more info , join us on our socials.</span>
           </h1>
         ) : (
           <form onSubmit={sendEmail} className="flex flex-col gap-9">
