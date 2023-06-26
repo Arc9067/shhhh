@@ -34,9 +34,11 @@ const Form = () => {
       .request(options)
       .then(function (response) {
         console.log(response.data);
+        setIsCorrect(true);
       })
       .catch(function (error) {
         console.error(error);
+        SetError("invalid email");
       });
   };
 
@@ -95,10 +97,14 @@ const Form = () => {
         )}
 
         <div className="flex justify-between items-center gap-6">
-          <a href="" className="text-3xl">
+          <a
+            href="https://t.me/ShhhhAiPortal"
+            target="_blank"
+            className="text-3xl"
+          >
             <ImTelegram />
           </a>
-          <a href="" className="text-3xl">
+          <a href="" target="_blank" className="text-3xl">
             <AiFillTwitterSquare />
           </a>
           <a href="" className="text-3xl">
