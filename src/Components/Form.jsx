@@ -26,9 +26,11 @@ const Form = () => {
       headers: { "Content-Type": "application/json" },
       data: {
         email: "team@Shhhh.ai",
-        message: `Thanks for Optin in ! 
-        Once the token is live  and beta version is up 
-We will send you notifying mail. 
+        message: `Thanks for opting in ! 
+Once the token is live  and beta version is up 
+We will send you a notifying mail. 
+
+Fo more info , join our socials. 
 `,
         recipient: formik.values.email,
       },
