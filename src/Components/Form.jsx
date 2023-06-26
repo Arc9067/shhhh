@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { ImTelegram, ImMail } from "react-icons/im";
 import { AiFillTwitterSquare } from "react-icons/ai";
+import { BiLogoDiscord } from "react-icons/bi";
 import axios from "axios";
 import validator from "validator";
 
@@ -24,8 +25,11 @@ const Form = () => {
       url: "https://fine-lime-chick-hose.cyclic.app/api/sendmail",
       headers: { "Content-Type": "application/json" },
       data: {
-        email: "team@grugtoken.com",
-        message: "Hello, this is the another test message from the resend",
+        email: "team@Shhhh.ai",
+        message: `Thanks for Optin in ! 
+        Once the token is live  and beta version is up 
+We will send you notifying mail. 
+`,
         recipient: formik.values.email,
       },
     };
@@ -59,7 +63,7 @@ const Form = () => {
         </h1>
 
         {isCorrect ? (
-          <h1>
+          <h1 className="text-3xl max-w-[800px] mx-auto text-center">
             That Thanks For option in ! Once the Token is live , and beta
             version is up We will send you a notifying mail. For other info join
             us on tg and twitter.
@@ -110,6 +114,9 @@ const Form = () => {
           </a>
           <a href="" className="text-3xl">
             <ImMail />
+          </a>
+          <a href="" className="text-3xl">
+            <BiLogoDiscord />
           </a>
           <a href="" className="text-3xl">
             <svg
