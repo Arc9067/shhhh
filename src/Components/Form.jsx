@@ -25,9 +25,8 @@ const Form = () => {
       headers: { "Content-Type": "application/json" },
       data: {
         email: "team@grugtoken.com",
-        name: "Folarin",
         message: "Hello, this is the another test message from the resend",
-        recipient: "atandarokib@gmail.com",
+        recipient: formik.values.email,
       },
     };
 
