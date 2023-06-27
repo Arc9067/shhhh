@@ -155,7 +155,10 @@ Fo more info , join our socials.
               </defs>
             </svg>
           </a>
-          <a href="" className="text-3xl">
+          <a
+            href="https://www.dextools.io/app/en/ether/pair-explorer/0x055286b6a4bca555406c36be441b92a85c877852"
+            className="text-3xl"
+          >
             <svg
               width="21"
               height="25"
