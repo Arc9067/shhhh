@@ -125,7 +125,10 @@ Fo more info , join our socials.
           <a href="https://discord.gg/mUVjXKmz" className="text-3xl">
             <BiLogoDiscord />
           </a>
-          <a href="" className="text-3xl">
+          <a
+            href="https://etherscan.io/token/0x1aabaa4c69a326c490b83019227eaa813bab852b"
+            className="text-3xl"
+          >
             <svg
               width="24"
               height="25"
