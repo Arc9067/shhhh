@@ -112,13 +112,17 @@ Fo more info , join our socials.
           >
             <ImTelegram />
           </a>
-          <a href="" target="_blank" className="text-3xl">
+          <a
+            href="https://twitter.com/Shhhh_Ai"
+            target="_blank"
+            className="text-3xl"
+          >
             <AiFillTwitterSquare />
           </a>
           <a href="" className="text-3xl">
             <ImMail />
           </a>
-          <a href="" className="text-3xl">
+          <a href="https://discord.gg/mUVjXKmz" className="text-3xl">
             <BiLogoDiscord />
           </a>
           <a href="" className="text-3xl">
